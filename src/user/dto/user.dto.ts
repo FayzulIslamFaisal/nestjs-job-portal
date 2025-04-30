@@ -5,6 +5,7 @@ import {
   IsOptional,
   IsString,
   IsUrl,
+  MinLength,
 } from 'class-validator';
 
 export class RegisterUserDto {
@@ -14,11 +15,12 @@ export class RegisterUserDto {
 
   @IsNotEmpty()
   @IsString()
-  @IsEmail()
+  @IsEmail({}, { message: 'Please provide a valid email address' })
   email: string;
 
   @IsNotEmpty()
   @IsString()
+  @MinLength(6, { message: 'Password is too short. Minimum length is 6 characters.' })
   password: string;
 
   @IsNotEmpty()
