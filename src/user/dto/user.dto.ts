@@ -20,7 +20,9 @@ export class RegisterUserDto {
 
   @IsNotEmpty()
   @IsString()
-  @MinLength(6, { message: 'Password is too short. Minimum length is 6 characters.' })
+  @MinLength(6, {
+    message: 'Password is too short. Minimum length is 6 characters.',
+  })
   password: string;
 
   @IsNotEmpty()
