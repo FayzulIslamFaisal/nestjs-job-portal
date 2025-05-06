@@ -11,6 +11,7 @@ import {
 import { JobService } from './job.service';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { PostJobDto } from './dto/job.dto';
+import { Request } from 'express';
 
 @Controller('job')
 export class JobController {
